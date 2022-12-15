@@ -1,0 +1,43 @@
+{
+    "pianist": [
+      {
+        "id": 1,
+        "name": "Elijah",
+        "band": "Wahenguzi"
+      },
+      {
+        "id": 2,
+        "name": "Victor",
+        "band": "5 star"
+      }
+   
+    ],
+    "guitarist": [
+        {
+          "id": 1,
+          "name": "Shaka",
+          "band": "Mavuno"
+    
+        },
+        {
+          "id": 2,
+          "name": "Shiro",
+          "band": "Talanta"
+        }
+     
+      ],
+      "drummer": [
+        {
+          "id": 1,
+          "name": "Brolyne",
+          "band": "Niuru"
+        },
+        {
+          "id": 2,
+          "name": "kupa",
+          "band": "5 star"
+        }
+     
+      ]
+
+  }
