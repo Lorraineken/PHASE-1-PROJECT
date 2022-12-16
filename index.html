@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Msanii</title>
+    <title>WAFUNGI</title>
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/index.css"/>
 </head>
@@ -24,16 +24,25 @@
  
   
     <button class="btn dropdown btn-secondary dropdown-toggle">Pianist</button>
+    <ul class="dropdown-menu">
+        <!---Pianist Names---->
+    </ul>
 </div>
 <div class="card container col " style="width: 18rem;">
     <img src="./images/de-an-sun-b57RqS-nQ1c-unsplash.jpg" class="card-img-top">
     
     <button class="btn dropdown btn-secondary dropdown-toggle">Guitarist</button>
+    <ul class="dropdown-menu">
+        <!---Guitarist Names---->
+    </ul>
 </div>
 <div class="card container col" style="width: 18rem; ">
     <img src="./images/gabriel-barletta--lWcaUVJ39Y-unsplash.jpg" class="card-img-top">
 
     <button class="btn dropdown btn-secondary dropdown-toggle">Drummer</button>
+    <ul class="dropdown-menu">
+        <!---Drummers Names---->
+    </ul>
 </div>
 </div>
 
@@ -41,8 +50,8 @@
     <h4 class="card-header">Add New Instrumentalist</h4>
     <label for="name" class="form-control">Name: </label>
     <input type="text" name="name" id="new-name" />
-    <label for="restaurant">Instrument: </label>
-    <input type="text" name="Instrument" id="new-instrument" />
+    <label for="restaurant">Instrument:(Please enter 1,2 or 3) </label>
+    <input type="text" name="Instrument" id="new-instrument" placeholder="1:pianist 2:guitarist 3:Drummer" />
     <label for="band">Band Name: </label>
     <input type="text" name="band" id="band-name" />
     <input type="submit" value="Add Instrumentalist" />
