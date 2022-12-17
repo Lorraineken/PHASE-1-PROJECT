@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded',()=>{
  addNewInstrumentalist()
  dropDownMenu()
 
- 
-
 })
 
 // Adding details of new instrumentalist
@@ -62,13 +60,20 @@ function dropDownMenu(){
         .then((response) => response.json())
         .then((pianistDetails) =>{
             console.log(pianistDetails)
-            const pianistNames=[]   
+            const pianistNames=[]
+            const pianistBand=[]   
             for(item of pianistDetails){
                 pianistNames.push(item.name)
+                pianistBand.push(item.band)
             }
             for(let x=0;x<pianistNames.length;x++){
                 const li =document.createElement('li')
                 li.innerText = pianistNames[x]
+                li.addEventListener("click",()=>{
+                    p=document.createElement('p')
+                    p.innerText=`Band name:${pianistBand[x]}`
+                    li.appendChild(p)
+                })
                 pianoPlayer.appendChild(li)
             }
         })
