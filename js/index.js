@@ -53,11 +53,8 @@ function dropDownMenu(){
     const pianoPlayer=document.getElementById("piano")
     const guitarPlayer=document.getElementById("guitar")
     const drumPlayer=document.getElementById("drummer")
-
-    
-   
-
-    pianistBtn=document.getElementById('pianist-button')
+    const pianistBtn=document.getElementById('pianist-button')
+    const guitaristBtn =document.getElementById('guitarist-button')
 
     pianistBtn.addEventListener('click',()=>{
         fetch("http://localhost:3000/pianist")
@@ -75,4 +72,21 @@ function dropDownMenu(){
             }
         })
     })
+
+    guitaristBtn.addEventListener('click',()=>{
+        fetch("http://localhost:3000/guitarist")
+        .then((response) => response.json())
+        .then((guitaristDetails) =>{
+            const guitaristNames=[]   
+            for(item of guitaristDetails){
+                guitaristNames.push(item.name)
+            }
+            for(let x=0;x<guitaristNames.length;x++){
+                const li =document.createElement('li')
+                li.innerText = guitaristNames[x]
+                guitarPlayer.appendChild(li)
+            }
+        })
+    })
+
 }
