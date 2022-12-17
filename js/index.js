@@ -106,13 +106,20 @@ function dropDownMenu(){
         fetch("http://localhost:3000/drummer")
         .then((response) => response.json())
         .then((drummerDetails) =>{
-            const drummerNames=[]   
+            const drummerNames=[] 
+            const drummerBand=[]  
             for(item of drummerDetails){
                 drummerNames.push(item.name)
+                drummerBand.push(item.band)
             }
             for(let x=0;x<drummerNames.length;x++){
                 const li =document.createElement('li')
                 li.innerText = drummerNames[x]
+                li.addEventListener("click",()=>{
+                    p=document.createElement('p')
+                    p.innerText=`Band name:${drummerBand[x]}`
+                    li.appendChild(p)
+                })
                 drumPlayer.appendChild(li)
             }
         })
