@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded',()=>{
- addNewInstrumentalist()
- dropDownMenu()
+    dropDownMenu()
+    addNewInstrumentalist()
+ 
 
  
 
@@ -63,20 +64,20 @@ function dropDownMenu(){
         fetch("http://localhost:3000/pianist")
         .then((response) => response.json())
         .then((pianistDetails) =>{
-            const a =document.createElement('a')
-            a.className="dropdown-item"
-            a.href="#"
+            
             for(item of pianistDetails){
+              let a =document.createElement('a')
+              a.className="dropdown-item"
+              a.href="#"
                 console.log(item.name)
                 a.textContent=item.name
-                
+                li.appendChild(a)
+              
                 //li.innerHTML=<a class="dropdown-item" href="#">item.name</a>
-
-
             }
-            li.appendChild(a)
-            pianoPlayer.appendChild(li)
+            
             console.log(pianoPlayer)
+            pianoPlayer.appendChild(li)
         })
     })
 }
