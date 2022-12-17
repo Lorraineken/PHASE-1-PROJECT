@@ -54,7 +54,7 @@ function dropDownMenu(){
     const guitarPlayer=document.getElementById("guitar")
     const drumPlayer=document.getElementById("drummer")
 
-    const li =document.createElement('li')
+    
    
 
     pianistBtn=document.getElementById('pianist-button')
@@ -63,20 +63,16 @@ function dropDownMenu(){
         fetch("http://localhost:3000/pianist")
         .then((response) => response.json())
         .then((pianistDetails) =>{
-            
+            console.log(pianistDetails)
+            const pianistNames=[]   
             for(item of pianistDetails){
-              const a =document.createElement('a')
-              a.className="dropdown-item"
-              a.href="#"
-                console.log(item.name)
-                a.textContent=item.name
-
-                li.appendChild(a)
-              
-              console.log(pianoPlayer)
-                //li.innerHTML=<a class="dropdown-item" href="#">item.name</a>
+                pianistNames.push(item.name)
             }
-            pianoPlayer.appendChild(li)
+            for(let x=0;x<pianistNames.length;x++){
+                const li =document.createElement('li')
+                li.innerText = pianistNames[x]
+                pianoPlayer.appendChild(li)
+            }
         })
     })
 }

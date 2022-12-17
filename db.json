@@ -9,6 +9,11 @@
       "id": 2,
       "name": "Victor",
       "band": "5 star"
+    },
+    {
+      "name": "John",
+      "band": "beats",
+      "id": 3
     }
   ],
   "guitarist": [
@@ -38,6 +43,11 @@
       "id": 2,
       "name": "kupa",
       "band": "5 star"
+    },
+    {
+      "name": "Dave",
+      "band": "Ensave",
+      "id": 3
     }
   ]
 }
