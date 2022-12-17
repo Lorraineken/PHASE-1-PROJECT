@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded',()=>{
-    dropDownMenu()
-    addNewInstrumentalist()
- 
+ addNewInstrumentalist()
+ dropDownMenu()
 
  
 
@@ -66,17 +65,17 @@ function dropDownMenu(){
         .then((pianistDetails) =>{
             
             for(item of pianistDetails){
-              let a =document.createElement('a')
+              const a =document.createElement('a')
               a.className="dropdown-item"
               a.href="#"
                 console.log(item.name)
                 a.textContent=item.name
+
                 li.appendChild(a)
               
+              console.log(pianoPlayer)
                 //li.innerHTML=<a class="dropdown-item" href="#">item.name</a>
             }
-            
-            console.log(pianoPlayer)
             pianoPlayer.appendChild(li)
         })
     })
