@@ -53,11 +53,60 @@
   "bandsList": [
     {
       "id": 1,
-      "name":"",
-      "about":"",
-      "members":"",
-      "past_event":"",
-      "upcoming_event": ""
+      "name":"5star",
+      "about":"This is a kenyan band based in Nairobi that plays every kind of music",
+      "members":{
+        "guitarist":"Wesley",
+        "pianist":"Victor",
+        "drummer":"Brolyne",
+        "Saxophonist":"Obala"
+      },
+      "past_events":[{
+        "Venue":"Dev House",
+        "Date":"5/05/2022"
+      },
+      {
+        "Venue":"Dev House",
+        "Date":"16/12/2022"
+      }],
+      "upcoming_events": [{
+        "Venue":"TRM",
+        "Date":"25/12/2022",
+        "Time":"6.00pm-9.00pm"
+      },
+      {
+        "Venue":"KICC",
+        "Date":"31/12/2022",
+        "Time":"10.00pm -1.00am"
+      }]
+    },
+
+    {
+      "id": 2,
+      "name":"beats",
+      "about":"A multinational band thap plays afrobeat and Rhumba music",
+      "members":{
+        "guitarist":"ken",
+        "pianist":"John",
+        "drummer":"Mary",
+        "vocalist":"Eunice"
+      },
+      "past_events":[{
+        "Venue":"KNT",
+        "Date":"15/10/2022"
+      },
+      {
+        "Venue":"Nairobi Festival",
+        "Date":"14/12/2022"
+      }],
+      "upcoming_events": [{
+        "Venue":"Nairobi Club",
+        "Date":"30/12/2022",
+        "Time":"4.00pm-8.00pm"
+      }
+      ]
     }
+
+
   ]
 }
