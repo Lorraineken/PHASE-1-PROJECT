@@ -49,5 +49,15 @@
       "band": "Ensave",
       "id": 3
     }
+  ],
+  "bandsList": [
+    {
+      "id": 1,
+      "name":"",
+      "about":"",
+      "members":"",
+      "past_event":"",
+      "upcoming_event": ""
+    }
   ]
 }
