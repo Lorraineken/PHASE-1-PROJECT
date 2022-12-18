@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded',()=>{
  addNewInstrumentalist()
  dropDownMenu()
+ addBandList()
 
 })
 
@@ -125,4 +126,31 @@ function dropDownMenu(){
         })
     })
 
+
 }
+
+//Display names of bands
+
+function addBandList(){
+    const displayBand =document.getElementById('band-names')
+   
+    const bandNames=[]
+
+    fetch("http://localhost:3000/bandsList")
+    .then((response) => response.json())
+    .then((bandDetails) => {
+        console.log(bandDetails)
+        for(info of bandDetails){
+            bandNames.push(info.name)
+        }
+        for(let i=0;i<bandNames.length;i++){
+             bName =document.createElement('p')
+            bName.innerText=`${i+1}. ${bandNames[i]}`
+            displayBand.appendChild(bName) 
+        }
+        
+
+    })
+}
+
+//Display band details after search
