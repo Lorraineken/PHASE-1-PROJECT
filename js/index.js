@@ -183,6 +183,8 @@ function displayBandDetails(){
 
                     bandName.innerText=`Band name: ${details.name}`
                     about.innerText=`About: ${details.about}`
+
+                    // display members details
                     const mem=details.members
                     function membersObj(memObj = mem){
                         membersArray=[]
@@ -192,6 +194,8 @@ function displayBandDetails(){
                         })
                         members.innerText=`Members: ${membersArray}`
                     }
+
+                    //display pastEvents
                    
                     pastEvents.innerText=`Past Events: ${details.past_events}`
                     upcomingEvents.innerText=`Upcoming Events: ${details.upcoming_events}`
