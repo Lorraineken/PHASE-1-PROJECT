@@ -1,9 +1,12 @@
 document.addEventListener('DOMContentLoaded',()=>{
+    
  addNewInstrumentalist()
  dropDownMenu()
  addBandList()
+ displayBandDetails()
 
 })
+const bandNames=[]
 
 // Adding details of new instrumentalist
 function addNewInstrumentalist(){
@@ -133,13 +136,10 @@ function dropDownMenu(){
 
 function addBandList(){
     const displayBand =document.getElementById('band-names')
-   
-    const bandNames=[]
 
     fetch("http://localhost:3000/bandsList")
     .then((response) => response.json())
     .then((bandDetails) => {
-        console.log(bandDetails)
         for(info of bandDetails){
             bandNames.push(info.name)
         }
@@ -147,10 +147,42 @@ function addBandList(){
              bName =document.createElement('p')
             bName.innerText=`${i+1}. ${bandNames[i]}`
             displayBand.appendChild(bName) 
-        }
-        
-
+        }   
     })
 }
 
+
 //Display band details after search
+
+function displayBandDetails(){
+    const searchForm=document.getElementById("search-Band")
+
+    searchForm.addEventListener("submit",(e)=>{
+        e.preventDefault()
+        const searchInput = e.target.children[0].value
+
+        console.log(bandNames)
+
+        const foundBand = bandNames.find((item)=> item===searchInput)
+
+        if (foundBand){
+            fetch("http://localhost:3000/bandsList")
+            .then((response) => response.json())
+            .then((bandDetails) => {
+                for(let i=0;i<bandNames.length;i++){
+                    if(foundBand === bandNames[i]){
+                        const details=bandDetails[i]
+                        console.log(details)
+
+                        
+                    }
+
+                }
+            })
+        }
+
+ 
+
+    })
+
+}
