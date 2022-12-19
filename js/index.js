@@ -35,15 +35,15 @@ function addNewInstrumentalist(){
     }
 
     if (instrument == 1){
-        fetch("http://localhost:3000/pianist",configurationObject)
+        fetch("https://lorraineken.github.io/server/pianist.json",configurationObject)
 
     }
     else if(instrument == 2){
-        fetch("http://localhost:3000/guitarist",configurationObject)
+        fetch("https://lorraineken.github.io/server/guitarist.json",configurationObject)
 
     }
     else if(instrument == 3){
-        fetch("http://localhost:3000/drummer",configurationObject)
+        fetch("https://lorraineken.github.io/server/drummer.json",configurationObject)
     }
 
  })
@@ -60,10 +60,10 @@ function dropDownMenu(){
     const drummerBtn = document.getElementById('drummer-button')
 
     pianistBtn.addEventListener('click',()=>{
-        fetch("http://localhost:3000/pianist")
+        fetch("https://lorraineken.github.io/server/pianist.json")
         .then((response) => response.json())
-        .then((pianistDetails) =>{
-            console.log(pianistDetails)
+        .then((data) =>{
+            const pianistDetails=data.pianist
             const pianistNames=[]
             const pianistBand=[]   
             for(item of pianistDetails){
@@ -84,9 +84,10 @@ function dropDownMenu(){
     })
 
     guitaristBtn.addEventListener('click',()=>{
-        fetch("http://localhost:3000/guitarist")
+        fetch("https://lorraineken.github.io/server/guitarist.json")
         .then((response) => response.json())
-        .then((guitaristDetails) =>{
+        .then((data) =>{
+            const guitaristDetails=data.guitarist
             const guitaristNames=[]
             const guitaristBand=[]   
             for(item of guitaristDetails){
@@ -107,9 +108,10 @@ function dropDownMenu(){
     })
 
     drummerBtn.addEventListener('click',()=>{
-        fetch("http://localhost:3000/drummer")
+        fetch("https://lorraineken.github.io/server/drummer.json")
         .then((response) => response.json())
-        .then((drummerDetails) =>{
+        .then((data) =>{
+            const drummerDetails=data.drummer
             const drummerNames=[] 
             const drummerBand=[]  
             for(item of drummerDetails){
@@ -137,9 +139,10 @@ function dropDownMenu(){
 function addBandList(){
     const displayBand =document.getElementById('band-names')
 
-    fetch("http://localhost:3000/bandsList")
+    fetch("https://lorraineken.github.io/server/bands.json")
     .then((response) => response.json())
-    .then((bandDetails) => {
+    .then((bandData) => {
+        const bandDetails=bandData.bandsList
         for(info of bandDetails){
             bandNames.push(info.name)
         }
@@ -161,18 +164,16 @@ function displayBandDetails(){
         e.preventDefault()
         const searchInput = e.target.children[0].value
 
-        console.log(bandNames)
-
         const foundBand = bandNames.find((item)=> item===searchInput)
 
         if (foundBand){
-            fetch("http://localhost:3000/bandsList")
+            fetch("https://lorraineken.github.io/server/bands.json")
             .then((response) => response.json())
-            .then((bandDetails) => {
+            .then((data) => {
+                const bandDetails=data.bandsList
                 for(let i=0;i<bandNames.length;i++){
                     if(foundBand === bandNames[i]){
                         const details=bandDetails[i]
-                        console.log(details)
 
                     const display=document.getElementById("displayBand-details")
                     const bandName =document.createElement('p')
