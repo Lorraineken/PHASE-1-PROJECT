@@ -174,6 +174,34 @@ function displayBandDetails(){
                         const details=bandDetails[i]
                         console.log(details)
 
+                    const display=document.getElementById("displayBand-details")
+                    const bandName =document.createElement('p')
+                    const about =document.createElement('p')
+                    const members =document.createElement('p')
+                    const pastEvents =document.createElement('p')
+                    const upcomingEvents =document.createElement('p')
+
+                    bandName.innerText=`Band name: ${details.name}`
+                    about.innerText=`About: ${details.about}`
+                    const mem=details.members
+                    function membersObj(memObj = mem){
+                        membersArray=[]
+                        Object.entries(memObj).forEach(([key,value]) => {
+                            const member=`${key}:${value}`
+                            membersArray.push(member)
+                        })
+                        members.innerText=`Members: ${membersArray}`
+                    }
+                   
+                    pastEvents.innerText=`Past Events: ${details.past_events}`
+                    upcomingEvents.innerText=`Upcoming Events: ${details.upcoming_events}`
+
+                    display.appendChild(bandName)
+                    display.appendChild(about)
+                    membersObj()
+                    display.appendChild(members)
+                    display.appendChild(pastEvents)
+                    display.appendChild(upcomingEvents)
                         
                     }
 
