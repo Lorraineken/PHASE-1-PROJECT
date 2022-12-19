@@ -61,50 +61,34 @@
         "drummer":"Brolyne",
         "Saxophonist":"Obala"
        },
-      "past_events":[{
-        "Venue":"Dev House",
-        "Date":"5/05/2022"
+      "past_events":{  
+        "Koroga Fest":"5/05/2022",
+        "Baptist Church-worship experience":"16/12/2022"
       },
-      {
-        "Venue":"Dev House",
-        "Date":"16/12/2022"
-      }],
-      "upcoming_events": [{
-        "Venue":"TRM",
-        "Date":"25/12/2022",
-        "Time":"6.00pm-9.00pm"
-      },
-      {
-        "Venue":"KICC",
-        "Date":"31/12/2022",
-        "Time":"10.00pm -1.00am"
-      }]
+      "upcoming_events": {
+        "TRM":"25/12/2022 6.00pm-9.00pm",
+        "KICC - New year Party":"31/12/2022 10.00pm -1.00am"
+      }
     },
 
     {
       "id": 2,
       "name":"beats",
-      "about":"A multinational band thap plays afrobeat and Rhumba music",
+      "about":"A multinational band that plays afrobeat and Rhumba music",
       "members":{
         "guitarist":"ken",
         "pianist":"John",
         "drummer":"Mary",
         "vocalist":"Eunice"
       },
-      "past_events":[{
-        "Venue":"KNT",
-        "Date":"15/10/2022"
+      "past_events":{
+        "KNT":"15/10/2022",
+        "Uhuru Park-Nairobi Festival":"14/12/2022"
       },
-      {
-        "Venue":"Nairobi Festival",
-        "Date":"14/12/2022"
-      }],
-      "upcoming_events": [{
-        "Venue":"Nairobi Club",
-        "Date":"30/12/2022",
-        "Time":"4.00pm-8.00pm"
+      "upcoming_events": {
+        "Nairobi Club":"30/12/2022 4.00pm-8.00pm"
       }
-      ]
+      
     }
 
 
