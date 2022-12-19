@@ -196,14 +196,25 @@ function displayBandDetails(){
                     }
 
                     //display pastEvents
+
+                    const pEvents=details.past_events
+                    function pastEventsObj(pastObj = pEvents){
+                        pastEventArray=[]
+                        Object.entries(pastObj).forEach(([key,value]) => {
+                            const event=`${key}:${value}`
+                            pastEventArray.push(event)
+                        })
+                        pastEvents.innerText=`Past Events: ${pastEventArray}`
+                    }
                    
-                    pastEvents.innerText=`Past Events: ${details.past_events}`
+                   
                     upcomingEvents.innerText=`Upcoming Events: ${details.upcoming_events}`
 
                     display.appendChild(bandName)
                     display.appendChild(about)
                     membersObj()
                     display.appendChild(members)
+                    pastEventsObj()
                     display.appendChild(pastEvents)
                     display.appendChild(upcomingEvents)
                         
