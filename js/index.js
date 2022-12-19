@@ -207,8 +207,18 @@ function displayBandDetails(){
                         pastEvents.innerText=`Past Events: ${pastEventArray}`
                     }
                    
+                    //display upcoming events
+                    const upEvents=details.upcoming_events
+                    function upcomingEventsObj(upObj = upEvents){
+                        upcomingEventsArray=[]
+                        Object.entries(upObj).forEach(([key,value]) => {
+                            const event=`${key}:${value}`
+                            upcomingEventsArray.push(event)
+                        })
+                        upcomingEvents.innerText=`Upcoming Events: ${upcomingEventsArray}`
+                    }
                    
-                    upcomingEvents.innerText=`Upcoming Events: ${details.upcoming_events}`
+                    
 
                     display.appendChild(bandName)
                     display.appendChild(about)
@@ -216,6 +226,7 @@ function displayBandDetails(){
                     display.appendChild(members)
                     pastEventsObj()
                     display.appendChild(pastEvents)
+                    upcomingEventsObj()
                     display.appendChild(upcomingEvents)
                         
                     }
