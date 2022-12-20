@@ -1,11 +1,17 @@
 document.addEventListener('DOMContentLoaded',()=>{
     
- addNewInstrumentalist()
+ addNewInstrumentalist() 
  dropDownMenu()
  addBandList()
  displayBandDetails()
 
 })
+
+const pianistURL ="https://lorraineken.github.io/server/pianist.json"
+const guitaristURL="https://lorraineken.github.io/server/guitarist.json"
+const drummerURL ="https://lorraineken.github.io/server/drummer.json"
+const bandListURL="https://lorraineken.github.io/server/bands.json"
+
 const bandNames=[]
 
 // Adding details of new instrumentalist
@@ -30,7 +36,6 @@ function addNewInstrumentalist(){
         headers:{
             "Content-Type":"application/json",
             Accept:"application/json",
-            mode:'no-cors',
         },
         body: JSON.stringify(detailsUpload)
     }
@@ -38,15 +43,15 @@ function addNewInstrumentalist(){
     
 
     if (instrument == 1){
-        fetch("https://lorraineken.github.io/server/pianist.json",configurationObject)
+        fetch(pianistURL,configurationObject)
 
     }
     else if(instrument == 2){
-        fetch("https://lorraineken.github.io/server/guitarist.json",configurationObject)
+        fetch(guitaristURL,configurationObject)
 
     }
     else if(instrument == 3){
-        fetch("https://lorraineken.github.io/server/drummer.json",configurationObject)
+        fetch(drummerURL,configurationObject)
     }
 
  })
@@ -63,7 +68,7 @@ function dropDownMenu(){
     const drummerBtn = document.getElementById('drummer-button')
 
     pianistBtn.addEventListener('click',()=>{
-        fetch("https://lorraineken.github.io/server/pianist.json")
+        fetch(pianistURL)
         .then((response) => response.json())
         .then((data) =>{
             const pianistDetails=data.pianist
@@ -87,7 +92,7 @@ function dropDownMenu(){
     })
 
     guitaristBtn.addEventListener('click',()=>{
-        fetch("https://lorraineken.github.io/server/guitarist.json")
+        fetch(guitaristURL)
         .then((response) => response.json())
         .then((data) =>{
             const guitaristDetails=data.guitarist
@@ -111,7 +116,7 @@ function dropDownMenu(){
     })
 
     drummerBtn.addEventListener('click',()=>{
-        fetch("https://lorraineken.github.io/server/drummer.json")
+        fetch(drummerURL)
         .then((response) => response.json())
         .then((data) =>{
             const drummerDetails=data.drummer
@@ -142,7 +147,7 @@ function dropDownMenu(){
 function addBandList(){
     const displayBand =document.getElementById('band-names')
 
-    fetch("https://lorraineken.github.io/server/bands.json")
+    fetch(bandListURL)
     .then((response) => response.json())
     .then((bandData) => {
         const bandDetails=bandData.bandsList
@@ -180,7 +185,7 @@ function displayBandDetails(){
         const foundBand = bandNames.find((item)=> item===searchInput)
 
         if (foundBand){
-            fetch("https://lorraineken.github.io/server/bands.json")
+            fetch(bandListURL)
             .then((response) => response.json())
             .then((data) => {
                 const bandDetails=data.bandsList
