@@ -1,4 +1,6 @@
 /*
+The form for adding instrumentalists only works when using db1.json 
+
  To use db1.json for full functionality of the application make the following changes
  1. Replace the URLs i.e with your local host URLs 
     e.g pianistURL= "http://localhost:3000/pianist";

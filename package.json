@@ -1,0 +1,24 @@
+{
+  "name": "phase-1-project",
+  "version": "1.0.0",
+  "description": "WAFUNGI web application for Kenyan instrumentalists and bands",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lorraineken/PHASE-1-PROJECT.git"
+  },
+  "keywords": [
+    "javascript",
+    "html",
+    "css"
+  ],
+  "author": "LORRAINE KUPA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lorraineken/PHASE-1-PROJECT/issues"
+  },
+  "homepage": "https://github.com/Lorraineken/PHASE-1-PROJECT#readme"
+}
