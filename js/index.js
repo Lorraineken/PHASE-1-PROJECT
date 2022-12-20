@@ -29,10 +29,13 @@ function addNewInstrumentalist(){
         method:"POST",
         headers:{
             "Content-Type":"application/json",
-            Accept:"application/json"
+            Accept:"application/json",
+            mode:'no-cors',
         },
         body: JSON.stringify(detailsUpload)
     }
+
+    
 
     if (instrument == 1){
         fetch("https://lorraineken.github.io/server/pianist.json",configurationObject)
@@ -147,9 +150,19 @@ function addBandList(){
             bandNames.push(info.name)
         }
         for(let i=0;i<bandNames.length;i++){
-             bName =document.createElement('p')
+            const bName =document.createElement('p')
+            const likeBtn=document.createElement('button')
+
+            //Add likes to bands
+            let like=0
+            likeBtn.innerText=`${like} likes`
+            likeBtn.addEventListener("click",()=>{
+                likeBtn.innerText=`${++like} likes`
+            })
             bName.innerText=`${i+1}. ${bandNames[i]}`
-            displayBand.appendChild(bName) 
+            bName.append(likeBtn)
+            displayBand.appendChild(bName)
+
         }   
     })
 }
