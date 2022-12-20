@@ -1,3 +1,14 @@
+/*
+ To use db1.json for full functionality of the application make the following changes
+ 1. Replace the URLs i.e with your local host URLs 
+    e.g pianistURL= "http://localhost:3000/pianist";
+        guitaristURL = "http://localhost:3000/guitarist";
+        drummerURL ="http://localhost:3000/drummer"
+        bandListURL="http://localhost:3000/bandsList"
+ 2.Check comments within the code written replace or comment out and make the necessary changes
+*/ 
+
+
 document.addEventListener('DOMContentLoaded',()=>{
     
  addNewInstrumentalist() 
@@ -6,7 +17,8 @@ document.addEventListener('DOMContentLoaded',()=>{
  displayBandDetails()
 
 })
-
+ 
+// fetch URLs
 const pianistURL ="https://lorraineken.github.io/server/pianist.json"
 const guitaristURL="https://lorraineken.github.io/server/guitarist.json"
 const drummerURL ="https://lorraineken.github.io/server/drummer.json"
@@ -67,11 +79,12 @@ function dropDownMenu(){
     const guitaristBtn =document.getElementById('guitarist-button')
     const drummerBtn = document.getElementById('drummer-button')
 
+     //Adding click on pianists names to display individual details
     pianistBtn.addEventListener('click',()=>{
         fetch(pianistURL)
         .then((response) => response.json())
-        .then((data) =>{
-            const pianistDetails=data.pianist
+        .then((data) =>{                        //replace data with pianistDetails
+            const pianistDetails=data.pianist  //comment out 
             const pianistNames=[]
             const pianistBand=[]   
             for(item of pianistDetails){
@@ -91,11 +104,12 @@ function dropDownMenu(){
         })
     })
 
+    // Adding click on guitarists names to display individual details
     guitaristBtn.addEventListener('click',()=>{
         fetch(guitaristURL)
         .then((response) => response.json())
-        .then((data) =>{
-            const guitaristDetails=data.guitarist
+        .then((data) =>{                            //replace data with guitaristDetails
+            const guitaristDetails=data.guitarist  //comment out
             const guitaristNames=[]
             const guitaristBand=[]   
             for(item of guitaristDetails){
@@ -115,11 +129,12 @@ function dropDownMenu(){
         })
     })
 
+     // Adding click on drummer names to display individual details
     drummerBtn.addEventListener('click',()=>{
         fetch(drummerURL)
         .then((response) => response.json())
-        .then((data) =>{
-            const drummerDetails=data.drummer
+        .then((data) =>{                             //Replace data with drummerDetails
+            const drummerDetails=data.drummer       //comment out
             const drummerNames=[] 
             const drummerBand=[]  
             for(item of drummerDetails){
@@ -142,15 +157,15 @@ function dropDownMenu(){
 
 }
 
-//Display names of bands
+//Display names of bands available
 
 function addBandList(){
     const displayBand =document.getElementById('band-names')
 
     fetch(bandListURL)
     .then((response) => response.json())
-    .then((bandData) => {
-        const bandDetails=bandData.bandsList
+    .then((bandData) => {                              //replace bandData with bandDetails
+        const bandDetails=bandData.bandsList           //comment out
         for(info of bandDetails){
             bandNames.push(info.name)
         }
@@ -187,8 +202,8 @@ function displayBandDetails(){
         if (foundBand){
             fetch(bandListURL)
             .then((response) => response.json())
-            .then((data) => {
-                const bandDetails=data.bandsList
+            .then((data) => {                              //replace data with bandDetails
+                const bandDetails=data.bandsList           //commentout
                 for(let i=0;i<bandNames.length;i++){
                     if(foundBand === bandNames[i]){
                         const details=bandDetails[i]

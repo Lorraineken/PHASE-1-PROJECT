@@ -14,6 +14,11 @@
       "name": "John",
       "band": "beats",
       "id": 3
+    },
+    {
+      "name": "Jane",
+      "band": "Sqoe",
+      "id": 4
     }
   ],
   "guitarist": [
@@ -53,44 +58,40 @@
   "bandsList": [
     {
       "id": 1,
-      "name":"5star",
-      "about":"This is a kenyan band based in Nairobi that plays every kind of music",
-      "members":{
-        "guitarist":"Wesley",
-        "pianist":"Victor",
-        "drummer":"Brolyne",
-        "Saxophonist":"Obala"
-       },
-      "past_events":{  
-        "Koroga Fest":"5/05/2022",
-        "Baptist Church-worship experience":"16/12/2022"
+      "name": "5star",
+      "about": "This is a kenyan band based in Nairobi that plays every kind of music",
+      "members": {
+        "guitarist": "Wesley",
+        "pianist": "Victor",
+        "drummer": "Brolyne",
+        "Saxophonist": "Obala"
+      },
+      "past_events": {
+        "Koroga Fest": "5/05/2022",
+        "Baptist Church-worship experience": "16/12/2022"
       },
       "upcoming_events": {
-        "TRM":"25/12/2022 6.00pm-9.00pm",
-        "KICC - New year Party":"31/12/2022 10.00pm -1.00am"
+        "TRM": "25/12/2022 6.00pm-9.00pm",
+        "KICC - New year Party": "31/12/2022 10.00pm -1.00am"
       }
     },
-
     {
       "id": 2,
-      "name":"beats",
-      "about":"A multinational band that plays afrobeat and Rhumba music",
-      "members":{
-        "guitarist":"ken",
-        "pianist":"John",
-        "drummer":"Mary",
-        "vocalist":"Eunice"
+      "name": "beats",
+      "about": "A multinational band that plays afrobeat and Rhumba music",
+      "members": {
+        "guitarist": "ken",
+        "pianist": "John",
+        "drummer": "Mary",
+        "vocalist": "Eunice"
       },
-      "past_events":{
-        "KNT":"15/10/2022",
-        "Uhuru Park-Nairobi Festival":"14/12/2022"
+      "past_events": {
+        "KNT": "15/10/2022",
+        "Uhuru Park-Nairobi Festival": "14/12/2022"
       },
       "upcoming_events": {
-        "Nairobi Club":"30/12/2022 4.00pm-8.00pm"
+        "Nairobi Club": "30/12/2022 4.00pm-8.00pm"
       }
-      
     }
-
-
   ]
 }
