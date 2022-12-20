@@ -8,7 +8,7 @@ This is a web application for Kenyan artists mainly music instrumentalist and ba
 The application is a platform where the instrumentalist can find each other and create a band or
 possibly join a band that already exists. Its also allows the general public to get the instrumentalists or bands they can hire for their functions.
 
-## FUNCTIONALITY
+### FUNCTIONALITY
 
 There are 3 dropdown menu(pianist,guitarist and drummer) for the which are instrument specific. To view the names of the instrumentalist click on the dropdown. From the names diplayed you can click on the names to get details of each instrumentalist
 
