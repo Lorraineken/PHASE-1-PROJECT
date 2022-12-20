@@ -17,7 +17,7 @@ Each band has a button on the side where one can click to add likes.
 
 Lastly there is a form where a new instrumentalist who plays one of the listed instruments can add his/her details which will then be added to database and can be viewed from the dropdown menu.
 
-NOTE: The form only works if you use the db1.json in your local machine i.e cloning the repo and making the necessary changes indicated in index.json
+NOTE: The add new Instrumentalist form only works if you use the db1.json in your local machine i.e cloning the repo and making the necessary changes indicated in index.js file
 
 
 
