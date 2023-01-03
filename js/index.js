@@ -3,10 +3,10 @@ The form for adding instrumentalists only works when using db1.json
 
  To use db1.json for full functionality of the application make the following changes
  1. Replace the URLs i.e with your local host URLs 
-    e.g pianistURL= "http://localhost:3000/pianist";
-        guitaristURL = "http://localhost:3000/guitarist";
-        drummerURL ="http://localhost:3000/drummer"
-        bandListURL="http://localhost:3000/bandsList"
+    e.g const pianistURL= "http://localhost:3000/pianist";
+        const guitaristURL = "http://localhost:3000/guitarist";
+        const drummerURL ="http://localhost:3000/drummer"
+        const bandListURL="http://localhost:3000/bandsList"
  2.Check comments within the code written replace or comment out and make the necessary changes
 */ 
 
@@ -21,10 +21,17 @@ document.addEventListener('DOMContentLoaded',()=>{
 })
  
 // fetch URLs
-const pianistURL ="https://lorraineken.github.io/server/pianist.json"
-const guitaristURL="https://lorraineken.github.io/server/guitarist.json"
-const drummerURL ="https://lorraineken.github.io/server/drummer.json"
-const bandListURL="https://lorraineken.github.io/server/bands.json"
+// const pianistURL ="https://lorraineken.github.io/server/pianist.json"
+// const guitaristURL="https://lorraineken.github.io/server/guitarist.json"
+// const drummerURL ="https://lorraineken.github.io/server/drummer.json"
+// const bandListURL="https://lorraineken.github.io/server/bands.json"
+
+const pianistURL= "http://localhost:3000/pianist";
+const guitaristURL = "http://localhost:3000/guitarist";
+const drummerURL ="http://localhost:3000/drummer"
+const bandListURL="http://localhost:3000/bandsList"
+
+
 
 const bandNames=[]
 
@@ -39,10 +46,14 @@ function addNewInstrumentalist(){
     const name = e.target.children[2].value
     const instrument =e.target.children[4].value
     const bandName = e.target.children[6].value
+    const contactInfo =e.target.children[8].value
+    const socialHandle =e.target.children[10].value
 
     const detailsUpload={
          name:`${name}`,
-         band:`${bandName}`
+         band:`${bandName}`,
+         contact: `${contactInfo}`,
+         socialMedia:`${socialHandle}`
     }
 
     const configurationObject ={
@@ -85,8 +96,8 @@ function dropDownMenu(){
     pianistBtn.addEventListener('click',()=>{
         fetch(pianistURL)
         .then((response) => response.json())
-        .then((data) =>{                        //replace data with pianistDetails
-            const pianistDetails=data.pianist  //comment out 
+        .then((pianistDetails) =>{                        //replace data with pianistDetails
+            //const pianistDetails=data.pianist  //comment out 
             const pianistNames=[]
             const pianistBand=[]   
             for(item of pianistDetails){
@@ -110,8 +121,8 @@ function dropDownMenu(){
     guitaristBtn.addEventListener('click',()=>{
         fetch(guitaristURL)
         .then((response) => response.json())
-        .then((data) =>{                            //replace data with guitaristDetails
-            const guitaristDetails=data.guitarist  //comment out
+        .then((guitaristDetails) =>{                            //replace data with guitaristDetails
+            //const guitaristDetails=data.guitarist  //comment out
             const guitaristNames=[]
             const guitaristBand=[]   
             for(item of guitaristDetails){
@@ -135,8 +146,8 @@ function dropDownMenu(){
     drummerBtn.addEventListener('click',()=>{
         fetch(drummerURL)
         .then((response) => response.json())
-        .then((data) =>{                             //Replace data with drummerDetails
-            const drummerDetails=data.drummer       //comment out
+        .then((drummerDetails) =>{                             //Replace data with drummerDetails
+           // const drummerDetails=data.drummer       //comment out
             const drummerNames=[] 
             const drummerBand=[]  
             for(item of drummerDetails){
@@ -166,8 +177,8 @@ function addBandList(){
 
     fetch(bandListURL)
     .then((response) => response.json())
-    .then((bandData) => {                              //replace bandData with bandDetails
-        const bandDetails=bandData.bandsList           //comment out
+    .then((bandDetails) => {                              //replace bandData with bandDetails
+        //const bandDetails=bandData.bandsList           //comment out
         for(info of bandDetails){
             bandNames.push(info.name)
         }
@@ -204,8 +215,8 @@ function displayBandDetails(){
         if (foundBand){
             fetch(bandListURL)
             .then((response) => response.json())
-            .then((data) => {                              //replace data with bandDetails
-                const bandDetails=data.bandsList           //commentout
+            .then((bandDetails) => {                              //replace data with bandDetails
+               // const bandDetails=data.bandsList           //commentout
                 for(let i=0;i<bandNames.length;i++){
                     if(foundBand === bandNames[i]){
                         const details=bandDetails[i]
