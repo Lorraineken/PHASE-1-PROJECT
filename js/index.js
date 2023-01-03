@@ -99,18 +99,29 @@ function dropDownMenu(){
         .then((pianistDetails) =>{                        //replace data with pianistDetails
             //const pianistDetails=data.pianist  //comment out 
             const pianistNames=[]
-            const pianistBand=[]   
+            const pianistBand=[] 
+            const pianistContact=[]
+            const pianistSocialHandle=[] 
             for(item of pianistDetails){
                 pianistNames.push(item.name)
                 pianistBand.push(item.band)
+                pianistContact.push(item.contact)
+                pianistSocialHandle.push(item.socialMedia)
+
             }
             for(let x=0;x<pianistNames.length;x++){
                 const li =document.createElement('li')
                 li.innerText = pianistNames[x]
                 li.addEventListener("click",()=>{
-                    p=document.createElement('p')
+                   const p=document.createElement('p')
+                   const p1=document.createElement('p')
+                   const p2=document.createElement('p')
                     p.innerText=`Band name:${pianistBand[x]}`
+                    p1.innerText=`Contact:${pianistContact[x]}`
+                    p2.innerText=`SocialMedia: ${pianistSocialHandle[x]}`
                     li.appendChild(p)
+                    li.appendChild(p1)
+                    li.appendChild(p2)
                 })
                 pianoPlayer.appendChild(li)
             }
@@ -124,18 +135,30 @@ function dropDownMenu(){
         .then((guitaristDetails) =>{                            //replace data with guitaristDetails
             //const guitaristDetails=data.guitarist  //comment out
             const guitaristNames=[]
-            const guitaristBand=[]   
+            const guitaristBand=[]  
+            const guitaristContact=[]
+            const guitaristSocialHandle=[] 
+            
             for(item of guitaristDetails){
                 guitaristNames.push(item.name)
                 guitaristBand.push(item.band)
+                guitaristContact.push(item.contact)
+                guitaristSocialHandle.push(item.socialMedia)
+
             }
             for(let x=0;x<guitaristNames.length;x++){
                 const li =document.createElement('li')
                 li.innerText = guitaristNames[x]
                 li.addEventListener("click",()=>{
-                    p=document.createElement('p')
+                   const p=document.createElement('p')
+                   const p1=document.createElement('p')
+                   const p2=document.createElement('p')
                     p.innerText=`Band name:${guitaristBand[x]}`
+                    p1.innerText=`Contact:${guitaristContact[x]}`
+                    p2.innerText=`SocialMedia: ${guitaristSocialHandle[x]}`
                     li.appendChild(p)
+                    li.appendChild(p1)
+                    li.appendChild(p2)
                 })
                 guitarPlayer.appendChild(li)
             }
