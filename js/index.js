@@ -21,15 +21,15 @@ document.addEventListener('DOMContentLoaded',()=>{
 })
  
 // fetch URLs
-// const pianistURL ="https://lorraineken.github.io/server/pianist.json"
-// const guitaristURL="https://lorraineken.github.io/server/guitarist.json"
-// const drummerURL ="https://lorraineken.github.io/server/drummer.json"
-// const bandListURL="https://lorraineken.github.io/server/bands.json"
+const pianistURL ="https://lorraineken.github.io/server/pianist.json"
+const guitaristURL="https://lorraineken.github.io/server/guitarist.json"
+const drummerURL ="https://lorraineken.github.io/server/drummer.json"
+const bandListURL="https://lorraineken.github.io/server/bands.json"
 
-const pianistURL= "http://localhost:3000/pianist";
-const guitaristURL = "http://localhost:3000/guitarist";
-const drummerURL ="http://localhost:3000/drummer"
-const bandListURL="http://localhost:3000/bandsList"
+// const pianistURL= "http://localhost:3000/pianist";
+// const guitaristURL = "http://localhost:3000/guitarist";
+// const drummerURL ="http://localhost:3000/drummer"
+// const bandListURL="http://localhost:3000/bandsList"
 
 
 
@@ -93,11 +93,12 @@ function dropDownMenu(){
     const drummerBtn = document.getElementById('drummer-button')
 
      //Adding click on pianists names to display individual details
+    
     pianistBtn.addEventListener('click',()=>{
         fetch(pianistURL)
         .then((response) => response.json())
-        .then((pianistDetails) =>{                        //replace data with pianistDetails
-            //const pianistDetails=data.pianist  //comment out 
+        .then((data) =>{                        //replace data with pianistDetails
+            const pianistDetails=data.pianist  //comment out 
             const pianistNames=[]
             const pianistBand=[] 
             const pianistContact=[]
@@ -122,8 +123,11 @@ function dropDownMenu(){
                     li.appendChild(p)
                     li.appendChild(p1)
                     li.appendChild(p2)
+                       
                 })
-                pianoPlayer.appendChild(li)
+                
+                pianoPlayer.appendChild(li)      
+                
             }
         })
     })
@@ -132,8 +136,8 @@ function dropDownMenu(){
     guitaristBtn.addEventListener('click',()=>{
         fetch(guitaristURL)
         .then((response) => response.json())
-        .then((guitaristDetails) =>{                            //replace data with guitaristDetails
-            //const guitaristDetails=data.guitarist  //comment out
+        .then((data) =>{                            //replace data with guitaristDetails
+            const guitaristDetails=data.guitarist  //comment out
             const guitaristNames=[]
             const guitaristBand=[]  
             const guitaristContact=[]
@@ -169,8 +173,8 @@ function dropDownMenu(){
     drummerBtn.addEventListener('click',()=>{
         fetch(drummerURL)
         .then((response) => response.json())
-        .then((drummerDetails) =>{                             //Replace data with drummerDetails
-           // const drummerDetails=data.drummer       //comment out
+        .then((data) =>{                    //Replace data with drummerDetails
+            const drummerDetails=data.drummer       //comment out
             const drummerNames=[] 
             const drummerBand=[] 
             const drummerContact=[]
@@ -210,8 +214,8 @@ function addBandList(){
 
     fetch(bandListURL)
     .then((response) => response.json())
-    .then((bandDetails) => {                              //replace bandData with bandDetails
-        //const bandDetails=bandData.bandsList           //comment out
+    .then((bandData) => {                              //replace bandData with bandDetails
+        const bandDetails=bandData.bandsList           //comment out
         for(info of bandDetails){
             bandNames.push(info.name)
         }
@@ -248,8 +252,8 @@ function displayBandDetails(){
         if (foundBand){
             fetch(bandListURL)
             .then((response) => response.json())
-            .then((bandDetails) => {                              //replace data with bandDetails
-               // const bandDetails=data.bandsList           //commentout
+            .then((data) => {                              //replace data with bandDetails
+                const bandDetails=data.bandsList           //commentout
                 for(let i=0;i<bandNames.length;i++){
                     if(foundBand === bandNames[i]){
                         const details=bandDetails[i]
