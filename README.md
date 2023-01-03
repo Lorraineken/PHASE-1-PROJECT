@@ -10,7 +10,7 @@ possibly join a band that already exists. Its also allows the general public to 
 
 ### FUNCTIONALITY
 
-There are 3 dropdown menu(pianist,guitarist and drummer) for the which are instrument specific. To view the names of the instrumentalist click on the dropdown. From the names diplayed you can click on the names to get details of each instrumentalist
+There are 3 dropdown menu(pianist,guitarist and drummer) which are instrument specific. To view the names of the instrumentalist click on the dropdown. From the names diplayed you can click on the names to get details of each instrumentalist
 
 There is a search button for getting details of the bands displayed.
 Each band has a button on the side where one can click to add likes.
