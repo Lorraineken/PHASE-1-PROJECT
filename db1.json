@@ -3,21 +3,29 @@
     {
       "id": 1,
       "name": "Elijah",
-      "band": "Wahenguzi"
+      "band": "Wahenguzi",
+      "contact": "elijah@mhengamail.com",
+      "socialMedia": "instagram:https://www.instagram.com/wahenguzi"
     },
     {
       "id": 2,
       "name": "Victor",
-      "band": "5 star"
+      "band": "5 star",
+      "contact": "victor@starmail.com",
+      "socialMedia": "facebook:https://www.facebook.com/vicStar"
     },
     {
       "name": "John",
       "band": "beats",
+      "contact": "john@gmail.com",
+      "socialMedia": "youtube:https://www.youtube.com/johnMusic",
       "id": 3
     },
     {
       "name": "Jane",
       "band": "Sqoe",
+      "contact": "jane@youmail.com",
+      "socialMedia": "instagram:https://www.instagram.com/jane_254",
       "id": 4
     }
   ],
@@ -25,16 +33,22 @@
     {
       "id": 1,
       "name": "Shaka",
-      "band": "Mavuno"
+      "band": "Mavuno",
+      "contact": "rene@youmail.com",
+      "socialMedia": "youtube:https://www.youtube.com/reneMusic"
     },
     {
       "id": 2,
       "name": "Shiro",
-      "band": "Talanta"
+      "band": "Talanta",
+      "contact": "shee@talanta.com",
+      "socialMedia": "facebook:https://www.facebook.com/sheeArtist"
     },
     {
       "name": "Ken",
       "band": "beats",
+      "contact": "ken@youmail.com",
+      "socialMedia": "instagram:https://www.instagram.com/ken_beats",
       "id": 3
     }
   ],
@@ -42,16 +56,22 @@
     {
       "id": 1,
       "name": "Brolyne",
-      "band": "Niuru"
+      "band": "Niuru",
+      "contact": "brolyne@niurumail.com",
+      "socialMedia": "instagram:https://www.instagram.com/niuru-bro"
     },
     {
       "id": 2,
       "name": "kupa",
-      "band": "5 star"
+      "band": "5 star",
+      "contact": "kupa@starmail.com",
+      "socialMedia": "youtube:https://www.youtube.com/kups"
     },
     {
       "name": "Dave",
       "band": "Ensave",
+      "contact": "dave@ensavemail.com",
+      "socialMedia": "instagram:https://www.instagram.com/daveMusic",
       "id": 3
     },
     {
