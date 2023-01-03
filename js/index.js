@@ -149,18 +149,28 @@ function dropDownMenu(){
         .then((drummerDetails) =>{                             //Replace data with drummerDetails
            // const drummerDetails=data.drummer       //comment out
             const drummerNames=[] 
-            const drummerBand=[]  
+            const drummerBand=[] 
+            const drummerContact=[]
+            const drummerSocialHandle=[] 
             for(item of drummerDetails){
                 drummerNames.push(item.name)
                 drummerBand.push(item.band)
+                drummerContact.push(item.contact)
+                drummerSocialHandle.push(item.socialMedia)
             }
             for(let x=0;x<drummerNames.length;x++){
                 const li =document.createElement('li')
                 li.innerText = drummerNames[x]
                 li.addEventListener("click",()=>{
-                    p=document.createElement('p')
+                   const p=document.createElement('p')
+                   const p1=document.createElement('p')
+                   const p2=document.createElement('p')
                     p.innerText=`Band name:${drummerBand[x]}`
+                    p1.innerText=`Contact:${drummerContact[x]}`
+                    p2.innerText=`SocialMedia: ${drummerSocialHandle[x]}`
                     li.appendChild(p)
+                    li.appendChild(p1)
+                    li.appendChild(p2)
                 })
                 drumPlayer.appendChild(li)
             }
